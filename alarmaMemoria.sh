@@ -15,10 +15,10 @@
 #       MEMORIA_CRITICA representa el nivel de memoria mínimo para la alerta
 #       modifique a conveniencia el valor entre 0 a 100 %
 #     
-MEMORIA_CRITICA=20   # 0 A 100 , ALERTA MEMORIA CUANDO ALCANCE  % "MEMORIA_CRITICA " MINIMA
+MEMORIA_CRITICA=15  # 0 A 100 , ALERTA MEMORIA CUANDO ALCANCE  % "MEMORIA_CRITICA " MINIMA
 
 memoriaTotal=$(free --mega | grep Mem |awk '{print $2}');
-memoriaDisponible=$(free --mega | grep Mem |awk '{print $6}')
+memoriaDisponible=$(free --mega | grep Mem |awk '{print $7}')
 alerta=$(( (memoriaTotal*MEMORIA_CRITICA)/100 ))
 
 echo "-----------------------------------------------------------"
