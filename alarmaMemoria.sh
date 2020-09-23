@@ -49,6 +49,8 @@ if [ "$memoriaDisponible" -lt "$alerta" ]; then
         # ---------------------else -----------------------------
         # Agrega aquí tus comandos en caso de que la memoria disponible esté en niveles aceptados
         # Ejemplo : salida a un log y luego gráficar el uso de memoria / dia. Etc
-        echo "Todo en orden $memoriaDisponible Megabytes";
+        # echo "Todo en orden $memoriaDisponible Megabytes";
+	export DISPLAY=:0 && notify-send " Disponible ( $memoriaDisponible Megabytes )" # alerta gráfica
+
 
 fi
